@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6D3031F6-9C6A-4FDA-97B0-F6431293BB00}</ProjectGuid>
+    <ProjectGuid>{03ECC0F2-2F0C-4DC0-8AB7-A9556AE7275E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CPQ.Common</RootNamespace>
-    <AssemblyName>CPQ.Common</AssemblyName>
+    <RootNamespace>CPQ.Persistance</RootNamespace>
+    <AssemblyName>CPQ.Persistance</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,15 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helper\Utilities.cs" />
-    <Compile Include="IGenericRepository.cs" />
+    <Compile Include="GenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IPropertyMapping.cs" />
-    <Compile Include="Services\IPropertyMappingService.cs" />
-    <Compile Include="Services\ITypeHelperService.cs" />
-    <Compile Include="Services\PropertyMapping.cs" />
-    <Compile Include="Services\PropertyMappingValue.cs" />
-    <Compile Include="Services\TypeHelperService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CPQ.Common\CPQ.Common.csproj">
+      <Project>{6d3031f6-9c6a-4fda-97b0-f6431293bb00}</Project>
+      <Name>CPQ.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPQ.Domain\CPQ.Domain.csproj">
+      <Project>{61e52d9d-b94c-463f-b03d-35391b7b8b71}</Project>
+      <Name>CPQ.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPQ.Service", "CPQ.Service\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPQ.Web", "CPQ.Web\CPQ.Web.csproj", "{57B89237-C2AA-464E-8088-3F66A5848FAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPQ.Persistance", "CPQ.Persistance\CPQ.Persistance.csproj", "{03ECC0F2-2F0C-4DC0-8AB7-A9556AE7275E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{57B89237-C2AA-464E-8088-3F66A5848FAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57B89237-C2AA-464E-8088-3F66A5848FAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57B89237-C2AA-464E-8088-3F66A5848FAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03ECC0F2-2F0C-4DC0-8AB7-A9556AE7275E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03ECC0F2-2F0C-4DC0-8AB7-A9556AE7275E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03ECC0F2-2F0C-4DC0-8AB7-A9556AE7275E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03ECC0F2-2F0C-4DC0-8AB7-A9556AE7275E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

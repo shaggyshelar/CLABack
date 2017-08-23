@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -173,6 +177,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -230,6 +235,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Products\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -246,6 +252,10 @@
     <ProjectReference Include="..\CPQ.Domain\CPQ.Domain.csproj">
       <Project>{61e52d9d-b94c-463f-b03d-35391b7b8b71}</Project>
       <Name>CPQ.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPQ.Persistance\CPQ.Persistance.csproj">
+      <Project>{03ecc0f2-2f0c-4dc0-8ab7-a9556ae7275e}</Project>
+      <Name>CPQ.Persistance</Name>
     </ProjectReference>
     <ProjectReference Include="..\CPQ.RuleEngine\CPQ.RuleEngine.csproj">
       <Project>{7f32b9d7-99a0-494c-9bf0-5872ce8510fa}</Project>
