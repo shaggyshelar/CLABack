@@ -22,7 +22,6 @@ namespace CPQ.Persistance
         public IEnumerable<Product> All()
         {
             _connection = CrmConnection.Parse(config.GetURL());
-            int priceListId = 1;
             try
             {
                 using (_orgService = new OrganizationService(_connection))
@@ -46,7 +45,7 @@ namespace CPQ.Persistance
                                 <attribute name='pricingmethodcode' />
                                 <attribute name='pricelevelid' />
                               <filter type='and'>
-                                <condition attribute='pricelevelid' operator='eq' uitype='pricelevel' value='" + priceListId + "' />" +
+                                <condition attribute='pricelevelid' operator='eq' uitype='pricelevel' value='EE8EAC6F-0F78-E711-811F-C4346BDC0E01' />" +
                               @"</filter>
                             </link-entity>
                           </entity>

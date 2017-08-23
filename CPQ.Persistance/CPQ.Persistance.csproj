@@ -38,20 +38,19 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Crm.Core, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crm2016.Core.1.0.0\lib\net45\Microsoft.Crm.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Crm.Sdk.Proxy">
       <HintPath>..\ThirdPartyReferences\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Xrm.Client">
       <HintPath>..\ThirdPartyReferences\Microsoft.Xrm.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xrm.Client.CodeGeneration">
-      <HintPath>..\ThirdPartyReferences\Microsoft.Xrm.Client.CodeGeneration.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xrm.Portal">
-      <HintPath>..\ThirdPartyReferences\Microsoft.Xrm.Portal.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xrm.Portal.Files">
-      <HintPath>..\ThirdPartyReferences\Microsoft.Xrm.Portal.Files.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xrm.Sdk">
       <HintPath>..\ThirdPartyReferences\Microsoft.Xrm.Sdk.dll</HintPath>
@@ -69,6 +68,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Xrm.Framework.Core, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xrm.Framework.Core.3.0.0.1\lib\net40\Xrm.Framework.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configs\CRMConfiguration.cs" />

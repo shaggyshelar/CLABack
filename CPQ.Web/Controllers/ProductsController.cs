@@ -30,7 +30,6 @@ namespace CPQ.Web.Controllers
         public IEnumerable<string> Get()
         {
             var data = _repo.All();
-            var test = _propertyMappingService.GetPropertyMapping<Product, Product>();
             return new string[] { "value1", "value2" };
         }
 
