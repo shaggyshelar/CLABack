@@ -1,5 +1,6 @@
 ﻿using CPQ.Common;
 using CPQ.Common.Helper;
+using CPQ.Persistance.Configs;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

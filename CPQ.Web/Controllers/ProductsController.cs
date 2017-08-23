@@ -2,6 +2,7 @@
 using CPQ.Common.Services;
 using CPQ.Domain;
 using CPQ.Persistance;
+using CPQ.Persistance.Configs;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -14,20 +15,21 @@ namespace CPQ.Web.Controllers
 {
     public class ProductsController : ApiController
     {
-        private IGenericRepository<Product> _repo;
         private IPropertyMappingService _propertyMappingService;
+        ProductRepository _repo;
 
-        public ProductsController(IGenericRepository<Product> repo, IPropertyMappingService propertyMappingService)
+        public ProductsController()
         {
-            _repo = repo;
-            _repo = new GenericRepository<Product>(null);
-            _propertyMappingService = propertyMappingService;
+            //_repo = repo;
+            //_propertyMappingService = propertyMappingService;
+            //_repo = new GenericRepository<Product>(null);
+            _repo = new ProductRepository();
         }
 
         // GET api/<controller>
         public IEnumerable<string> Get()
         {
-            var data = _repo.Query().Where( e => e.Id != null);
+            var data = _repo.All();
             var test = _propertyMappingService.GetPropertyMapping<Product, Product>();
             return new string[] { "value1", "value2" };
         }
