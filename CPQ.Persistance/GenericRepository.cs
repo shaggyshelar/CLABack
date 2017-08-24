@@ -27,7 +27,7 @@ namespace CPQ.Persistance
             return _dbSet.AsNoTracking().ToList();
         }
 
-        public IQueryable<TEntity> Query()
+        public IEnumerable<TEntity> Query(string query)
         {
             return _dbSet.AsNoTracking();
         }

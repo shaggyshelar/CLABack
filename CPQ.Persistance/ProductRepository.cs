@@ -63,7 +63,7 @@ namespace CPQ.Persistance
             return null;
         }
 
-        public IQueryable<Product> Query()
+        public IEnumerable<Product> Query(string query)
         {
             throw new NotImplementedException();
         }
