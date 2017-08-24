@@ -30,8 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>..\ThirdPartyReferences\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,10 +43,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlockPrice.cs" />
     <Compile Include="Common\BaseEntity.cs" />
     <Compile Include="Common\IEntity.cs" />
+    <Compile Include="ConfigurationAttribute.cs" />
+    <Compile Include="ConfigurationRule.cs" />
+    <Compile Include="Cost.cs" />
+    <Compile Include="DiscountSchedule.cs" />
+    <Compile Include="DiscountTiers.cs" />
+    <Compile Include="ErrorCondition.cs" />
+    <Compile Include="OptionConstraint.cs" />
+    <Compile Include="PriceAction.cs" />
+    <Compile Include="PriceCondition.cs" />
+    <Compile Include="PriceDimension.cs" />
+    <Compile Include="PriceDimensionData.cs" />
+    <Compile Include="PriceListItem.cs" />
+    <Compile Include="Pricing.cs" />
+    <Compile Include="PricingRule.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductAction.cs" />
+    <Compile Include="ProductCategory.cs" />
+    <Compile Include="ProductFeature.cs" />
+    <Compile Include="ProductOption.cs" />
+    <Compile Include="ProductRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Subscription.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
