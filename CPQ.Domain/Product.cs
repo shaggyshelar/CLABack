@@ -39,5 +39,7 @@ namespace CPQ.Domain
 
         public string QuantityEditable { get; set; }
         public string PriceEditable { get; set; }
+
+        public string Output { get; set; }
     }
 }
