@@ -123,7 +123,7 @@ function ruleEvaluated(data) {
     }
     else {
         // Set page controls in case value setters are used in the rule
-        setControls(data.Patient);
+        //setControls(data.Patient);
 
         // Display the evaluation output returned by the server
         $("#Info").text(data.Output);
@@ -167,45 +167,7 @@ function error(e) {
 // filled with data from the Patient's form.
 function getSource() {
     function Patient() { };
-    function Address() { };
-
-    var patient = new Patient();
-    patient.FirstName = getText("FirstName");
-    patient.LastName = getText("LastName");
-    patient.Email = getText("Email");
-    patient.Gender = $("#Gender option:selected").val();
-    patient.EducationTypeID = $("#EducationTypeID option:selected").val();
-    patient.PhysicianID = $("#PhysicianID option:selected").val();
-
-    var d = getText("DOB");
-    if (d != null) {
-        try { patient.DOB = new Date(d); }
-        catch (e) { patient.DOB = null; };
-    }
-
-    patient.Home = new Address();
-    patient.Home.Street = getText("Home_Street");
-    patient.Home.City = getText("Home_City");
-    patient.Home.Zip = getText("Home_Zip");
-    patient.Home.State = $("#Home_State option:selected").val();
-
-    patient.Work = new Address();
-    patient.Work.Street = getText("Work_Street");
-    patient.Work.City = getText("Work_City");
-    patient.Work.Zip = getText("Work_Zip");
-    patient.Work.State = $("#Work_State option:selected").val();
-
-    patient.Pulse = getText("Pulse");
-    patient.SystolicPressure = getText("SystolicPressure");
-    patient.DiastolicPressure = getText("DiastolicPressure");
-    patient.Temperature = getText("Temperature");
-
-    patient.Headaches = $("#Headaches").is(":checked");
-    patient.Allergies = $("#Allergies").is(":checked");
-    patient.Tobacco = $("#Tobacco").is(":checked");
-    patient.Alcohol = $("#Alcohol").is(":checked");
-
-    return patient;
+    return new Patient();
 };
 
 // Sets page control values to values of the

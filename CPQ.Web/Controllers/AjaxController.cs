@@ -110,12 +110,21 @@ namespace CPQ.Web.Controllers
             return Json(result, JsonRequestBehavior.DenyGet);
         }
 
+        private Product GetSource()
+        {
+            var product = new Product();
+            product.Name = "First";
+            product.DefaultQuantity = "First";
+            product.IsAllowBlockPrice = false;
+
+            return product;
+        }
+
         [HttpPost]
         public ActionResult EvaluateRule(Product patient, string ruleData)
         {
             Result result = new Result();
-
-            patient.DefaultQuantity = "2";
+            patient = this.GetSource();
 
             // See the comments in the LoadSettings() method
             RuleEditor editor = this.GetRuleEditor();
