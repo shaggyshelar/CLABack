@@ -17,5 +17,7 @@ namespace CPQ.Domain
         public string DefaultQuantity { get; set; }
         public string SubscriptionType { get; set; }
         public string SubscriptionPricing { get; set; }
+        public string QuantityEditable { get; set; }
+        public string PriceEditable { get; set; }
     }
 }

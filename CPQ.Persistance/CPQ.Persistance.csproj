@@ -79,8 +79,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configs\CRMConfiguration.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="GenericRepository.cs" />
-    <Compile Include="ProductRepository.cs" />
+    <Compile Include="Helper\Bindable.cs" />
+    <Compile Include="Helper\CRMHelper.cs" />
+    <Compile Include="Helper\DataMapper.cs" />
+    <Compile Include="Parsers\IEntityParser.cs" />
+    <Compile Include="Parsers\ProductParser.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
