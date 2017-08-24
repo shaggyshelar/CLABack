@@ -1,16 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CPQ.Domain;
 using CPQ.Common;
-using CPQ.Persistance.Configs;
-using Microsoft.Xrm.Client;
-using Microsoft.Xrm.Client.Services;
-using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Query;
-using CPQ.Persistance.Helper;
 using CPQ.Persistance.Parsers;
 
 namespace CPQ.Persistance.Repositories
@@ -23,34 +15,21 @@ namespace CPQ.Persistance.Repositories
         {
             string query = string.Format(Constants.Queries.GetProducts, "C0FE4869-0F78-E711-811F-C4346BDC0E01");
             var productCollection = this.FetchExpression(query);
-            var products = _parser.Parse(productCollection);
-            return products;
+            return _parser.Parse(productCollection);
         }
 
         public IEnumerable<Product> Query(string query)
         {
-            try
-            {
-                var productCollection = this.FetchExpression(query);
-            }
-            catch (Exception e)
-            {
-            }
-            return null;
+            var productCollection = this.FetchExpression(query);
+            return _parser.Parse(productCollection);
         }
 
         public Product FindByKey(Guid id)
         {
-            try
-            {
-                string query = string.Format(Constants.Queries.GetProducts, id);
-                var productCollection = this.FetchExpression(query);
-            }
-            catch (Exception e)
-            {
-            }
-
-            return null;
+            //TODO: Modify the query to get first product matching with GUID
+            string query = string.Format(Constants.Queries.GetProducts, id);
+            var productCollection = this.FetchExpression(query);
+            return _parser.Parse(productCollection).FirstOrDefault();
         }
     }
 }
