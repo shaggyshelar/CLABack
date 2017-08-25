@@ -9,14 +9,21 @@ namespace CPQ.Domain
 {
     public class Product : BaseEntity
     {
+        [Bindable]
         public Guid Id { get; set; }
+        [Bindable]
         public string Name { get; set; }
+        [Bindable]
         public string ProductCode { get; set; }
+        [Bindable]
         public string Description { get; set; }
+        [Bindable]
         public string ProductStrucuture { get; set; }
         public string DefaultQuantity { get; set; }
         public string SubscriptionType { get; set; }
         public string SubscriptionPricing { get; set; }
+        [Bindable]
+        public decimal StandardPrice { get; set; }
         public List<PriceDimension> Dimensions { get; set; }
 
         public List<ProductOption> Options { get; set; }
