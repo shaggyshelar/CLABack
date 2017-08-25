@@ -11,5 +11,7 @@ namespace CPQ.Web.ViewModels
         public string Name { get; set; }
         public string ProductCode { get; set; }
         public string QuantityEditable { get; set; }
+        public string Description { get; set; }
+        public decimal StandardPrice { get; set; }
     }
 }
