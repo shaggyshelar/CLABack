@@ -9,5 +9,5 @@ namespace CPQ.Domain
     [System.AttributeUsage(System.AttributeTargets.Property)]
     public class Bindable : System.Attribute
     {
-    } 
+    }
 }
