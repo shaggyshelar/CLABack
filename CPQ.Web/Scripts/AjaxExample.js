@@ -126,7 +126,9 @@ function ruleEvaluated(data) {
         //setControls(data.Patient);
 
         // Display the evaluation output returned by the server
-        $("#Info").text(data.Output);
+        console.log('Data=', data);
+        $("#evalResults").text(data.Results);
+
     }
 };
 

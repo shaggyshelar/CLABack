@@ -2,6 +2,7 @@
 using CodeEffects.Rule.Models;
 using CodeEffects.Rule.Mvc;
 using CPQ.Domain;
+using CPQ.Persistance.Repositories;
 using CPQ.Web.Models;
 using CPQ.Web.Services;
 using System;
@@ -14,6 +15,8 @@ namespace CPQ.Web.Controllers
 {
     public class AjaxController : Controller
     {
+        ProductRepository _repo = new ProductRepository();
+
         public AjaxController()
         {
         }
@@ -124,7 +127,8 @@ namespace CPQ.Web.Controllers
         public ActionResult EvaluateRule(Product patient, string ruleData)
         {
             Result result = new Result();
-            patient = this.GetSource();
+            List<string> results = new List<string>();
+
 
             // See the comments in the LoadSettings() method
             RuleEditor editor = this.GetRuleEditor();
@@ -147,18 +151,26 @@ namespace CPQ.Web.Controllers
             }
             else
             {
+                var products = _repo.All();
+
                 // Create an instance of the Evaluator class. Because our rules might reference other rules of evaluation type
                 // we use constructor that takes rule's XML and delegate of the method that can load referenced rules by their IDs.
                 Evaluator<Product> evaluator = new Evaluator<Product>(editor.Rule.GetRuleXml(), StorageService.LoadRuleXml);
 
                 // Evaluate the patient against the rule
-                bool success = evaluator.Evaluate(patient);
+                foreach (Product source in products)
+                {
+                    bool success = evaluator.Evaluate(source);
+                    results.Add(string.Format("{0} = {1}", source.Name, success));
+                }
 
                 // Return the evaluated patient back to the client
                 result.Patient = patient;
 
                 // Output the result of the evaluation to the client
-                result.Output = string.IsNullOrWhiteSpace(patient.Output) ? "The rule evaluated to " + success.ToString() : patient.Output;
+                //result.Output = string.IsNullOrWhiteSpace(patient.Output) ? "" + results : patient.Output;
+                result.Output = string.IsNullOrWhiteSpace(patient.Output) ? "" + results : patient.Output;
+                result.Results = results;
             }
 
             return Json(result, JsonRequestBehavior.DenyGet);

@@ -11,6 +11,7 @@ namespace CPQ.Web.Models
         public bool IsRuleEmpty { get; set; }
         public bool IsRuleValid { get; set; }
         public string Output { get; set; }
+        public List<string> Results { get; set; }
         public string ClientInvalidData { get; set; }
         public Product Patient { get; set; }
 
