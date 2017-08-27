@@ -43,9 +43,9 @@
       <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CodeEffects.Rule, Version=4.3.6.7, Culture=neutral, PublicKeyToken=baf0273d08cca81d, processorArchitecture=MSIL">
-      <HintPath>..\packages\CodeEffects.Rule.4.3.6.7\lib\net40\CodeEffects.Rule.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ESPL.Rule, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BRE\ESPL.Rule\bin\Debug\ESPL.Rule.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

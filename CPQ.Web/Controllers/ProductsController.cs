@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CodeEffects.Rule.Core;
+using ESPL.Rule.Core;
 using CPQ.Domain;
 using CPQ.Persistance.Repositories;
 using CPQ.Web.Services;

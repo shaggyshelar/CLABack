@@ -1,6 +1,6 @@
-﻿using CodeEffects.Rule.Core;
-using CodeEffects.Rule.Models;
-using CodeEffects.Rule.Mvc;
+﻿using ESPL.Rule.Core;
+using ESPL.Rule.Models;
+using ESPL.Rule.MVC;
 using CPQ.Domain;
 using CPQ.Persistance.Repositories;
 using CPQ.Web.Models;
@@ -161,6 +161,7 @@ namespace CPQ.Web.Controllers
                 foreach (Product source in products)
                 {
                     bool success = evaluator.Evaluate(source);
+                    editor.Rule.Mode = ESPL.Rule.Common.RuleType.Execution;
                     results.Add(string.Format("{0} = {1}", source.Name, success));
                 }
 
@@ -188,7 +189,7 @@ namespace CPQ.Web.Controllers
             // Client-only editor
             editor.ClientOnly = true;
 
-            editor.Mode = CodeEffects.Rule.Common.RuleType.Execution;
+            editor.Mode = ESPL.Rule.Common.RuleType.Execution;
 
             if (ruleXml == null)
                 editor.Rule = RuleModel.Create(typeof(Product));
