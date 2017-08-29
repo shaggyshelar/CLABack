@@ -98,13 +98,17 @@ namespace CPQ.Web.Controllers
             // Now we have our type. Let's create an instance from it:
             object generetedObject = Activator.CreateInstance(generetedType);
 
+            // Loop over all the generated properties, and assign the values from our XML:
+            PropertyInfo[] properties = generetedType.GetProperties();
 
-
+            // Loop over the values that we will assign to the properties
+            string value = "name";
+            properties[0].SetValue(generetedObject, value, null);
 
             string ruleXml = StorageService.LoadRuleXml("a84efa4c-9b31-4822-8c2a-50cb76bbc244");
             //Evaluator<Product> evaluator = new Evaluator<Product>(ruleXml);
             DynamicEvaluator dynamicEvaluator = new DynamicEvaluator(ruleXml);
-            
+
             var source = GetProduct();
 
             //bool result1 = evaluator.Evaluate(source);
