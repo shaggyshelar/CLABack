@@ -5,11 +5,9 @@ using System.Web;
 
 namespace CPQ.Web.ViewModels
 {
-    public class ProductDto
+    public class CategoriesViewModel
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
-        public string ProductCode { get; set; }
-        public string QuantityEditable { get; set; }
     }
 }

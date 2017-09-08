@@ -12,7 +12,7 @@ namespace CPQ.Web
     {
         public AutoMapperProfile()
         {
-            CreateMap<Product, ProductDto>();
+            CreateMap<Product, ProductViewModel>();
         }
     }
 }

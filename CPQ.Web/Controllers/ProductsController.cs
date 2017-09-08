@@ -14,7 +14,7 @@ namespace CPQ.Web.Controllers
         public IEnumerable<Product> Get()
         {
             var data = _repo.All();
-            var productViewModels = Mapper.Map<IEnumerable<ProductDto>>(data);
+            var productViewModels = Mapper.Map<IEnumerable<ProductViewModel>>(data);
             return data;
         }
     }
